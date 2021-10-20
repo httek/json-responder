@@ -14,7 +14,7 @@ class JsonResponse
      * @param array $headers
      * @return Response
      */
-    public static function make(array $data = [], string $message = 'OK', int $code = 2000, int $status = Response::HTTP_OK, array $headers = [])
+    public static function make($data = [], string $message = 'OK', int $code = 2000, int $status = Response::HTTP_OK, array $headers = [])
     {
         return new Response([
             'code' => $code, 'data' => $data, 'message' => $message, 'timestamp' => time()

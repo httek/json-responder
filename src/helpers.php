@@ -2,7 +2,31 @@
 
 use iCraftLTD\Foundation\JsonResponse;
 
+if (! function_exists('ok'))
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    function ok(string $message = 'OK', int $code = 2000) {
+        return JsonResponse::make(null, $message, $code);
+    }
+}
+
 if (! function_exists('fail'))
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    function fail(string $message = 'Fail', int $code = 5000) {
+        return JsonResponse::make(null, $message, $code);
+    }
+}
+
+if (! function_exists('error'))
 {
     /**
      * @param int $code
@@ -10,7 +34,7 @@ if (! function_exists('fail'))
      * @param array $data
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function fail(int $code = 5000, string $message = 'Fail', array $data = []) {
+    function error(string $message = 'Fail', int $code = 5000, $data = null) {
         return JsonResponse::make($data, $message, $code);
     }
 }
@@ -23,7 +47,7 @@ if (! function_exists('success'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function success(string $message = 'Fail', array $data = [], int $code = 2000) {
+    function success($data = null, string $message = 'OK', int $code = 2000) {
         return JsonResponse::make($data, $message, $code);
     }
 }

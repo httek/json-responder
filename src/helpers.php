@@ -9,7 +9,7 @@ if (! function_exists('ok'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function ok(string $message = 'OK', int $code = 2000, $data = null) {
+    function ok(string $message = 'OK', int $code = 2000, $data = []) {
         return JsonResponse::make($data, $message, $code);
     }
 }
@@ -21,7 +21,7 @@ if (! function_exists('fail'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function fail(string $message = 'Fail', int $code = 5000, $data = null) {
+    function fail(string $message = 'Fail', int $code = 5000, $data = []) {
         return JsonResponse::make($data, $message, $code);
     }
 }
@@ -34,7 +34,7 @@ if (! function_exists('error'))
      * @param array $data
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function error(string $message = 'Fail', int $code = 5000, $data = null) {
+    function error(string $message = 'Fail', int $code = 5000, $data = []) {
         return JsonResponse::make($data, $message, $code);
     }
 }
@@ -47,7 +47,7 @@ if (! function_exists('success'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function success($data = null, string $message = 'OK', int $code = 2000) {
+    function success($data = null, string $message = 'OK', int $code = []) {
         return JsonResponse::make($data, $message, $code);
     }
 }

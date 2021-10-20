@@ -47,7 +47,7 @@ if (! function_exists('success'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function success($data = null, string $message = 'OK', int $code = []) {
+    function success($data = [], string $message = 'OK', int $code = 2000) {
         return JsonResponse::make($data, $message, $code);
     }
 }

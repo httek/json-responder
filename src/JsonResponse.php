@@ -16,8 +16,10 @@ class JsonResponse
      */
     public static function make($data = [], string $message = 'OK', int $code = 2000, int $status = Response::HTTP_OK, array $headers = [])
     {
+        $data = is_null($data) || empty($data) ? new \stdClass() : $data;
+        
         return new Response([
-            'code' => $code, 'data' => $data ? (new \stdClass) : $data, 'message' => $message, 'timestamp' => time()
+            'code' => $code, 'data' => $data, 'message' => $message, 'timestamp' => time()
         ], $status, $headers);
     }
 }

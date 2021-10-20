@@ -18,6 +18,6 @@ class JsonResponse
     {
         return new Response([
             'code' => $code, 'data' => $data, 'message' => $message, 'timestamp' => time()
-        ], $status, $headers, true);
+        ], $status, $headers);
     }
 }

@@ -9,8 +9,8 @@ if (! function_exists('ok'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function ok(string $message = 'OK', int $code = 2000) {
-        return JsonResponse::make(null, $message, $code);
+    function ok(string $message = 'OK', int $code = 2000, $data = null) {
+        return JsonResponse::make($data, $message, $code);
     }
 }
 
@@ -21,8 +21,8 @@ if (! function_exists('fail'))
      * @param int $code
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    function fail(string $message = 'Fail', int $code = 5000) {
-        return JsonResponse::make(null, $message, $code);
+    function fail(string $message = 'Fail', int $code = 5000, $data = null) {
+        return JsonResponse::make($data, $message, $code);
     }
 }
 

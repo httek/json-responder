@@ -1,6 +1,6 @@
 <?php
 
-namespace iCraftLTD\Foundation;
+namespace HTTek\Foundation;
 
 use Symfony\Component\HttpFoundation\JsonResponse as Response;
 

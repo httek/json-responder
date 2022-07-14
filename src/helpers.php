@@ -1,6 +1,6 @@
 <?php
 
-use iCraftLTD\Foundation\JsonResponse;
+use HTTek\Foundation\JsonResponse;
 
 if (! function_exists('ok'))
 {
